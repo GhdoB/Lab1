@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LabVienas</string>
-    <string name="button">Button</string>
+    <string name="btnChangeTxt">Change text</string>
+    <string name="btnChangeClr">Change colour</string>
 </resources>

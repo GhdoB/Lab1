@@ -1,7 +1,9 @@
 package com.example.lab1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView tvTextChange;
+    Button changeColourButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +27,21 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        this.tvTextChange = findViewById(R.id.tvTextChange);
+        this.changeColourButton = findViewById(R.id.btnChangeColour);
+        changeColourButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvTextChange != null) {
+                    tvTextChange.setTextColor(Color.GREEN);
+                }
+            }
+        });
+
     }
 
     public void onBtnTextChangeClk(View view) {
-        TextView tvTextChange = findViewById(R.id.tvTextChange);
         tvTextChange.setText("Button Clicked!");
     }
 }
