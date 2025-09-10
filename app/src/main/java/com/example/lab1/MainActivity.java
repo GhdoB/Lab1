@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tvTextChange;
     Button changeColourButton;
+    Button changeBackColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Branch changes
+        this.changeBackColor = findViewById(R.id.btnChangeBackground);
+        changeBackColor.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                tvTextChange.setBackgroundColor(Color.RED);
+            }
+        });
     }
 
     public void onBtnTextChangeClk(View view) {
